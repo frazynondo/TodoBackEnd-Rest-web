@@ -34,6 +34,7 @@ public class TodoResource {
         return new ResponseEntity<Todo>(todo, HttpStatus.OK);
     }
 
+//URI
     @PostMapping("/users/{username}/todos")
     public ResponseEntity<Void> updateTodo(@PathVariable String username, @RequestBody Todo todo){
         Todo createdTodo = todoService.save(todo);
