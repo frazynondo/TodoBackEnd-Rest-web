@@ -2,6 +2,7 @@ package com.FrazyTodo.Restweb;
 
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,6 +21,17 @@ public class TodoHardCodedService {
 
     public List<Todo> findAll(){
         return todos;
+    }
+
+    public Todo save(Todo todo){
+        if(todo.getId()==-1 || todo.getId()==0){
+            todo.setId(++idCounter);
+            todos.add(todo);
+        } else {
+            deleteBy(todo.getId());
+            todos.add(todo);
+        }
+        return todo;
     }
 
     public Todo deleteBy(long id){
