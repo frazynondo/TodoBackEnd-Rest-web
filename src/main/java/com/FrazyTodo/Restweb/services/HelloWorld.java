@@ -20,6 +20,6 @@ public class HelloWorld {
     public HelloWorldBean helloWorldPathVariable(@PathVariable String name){
 
 //        throw new RuntimeException("Something went wrong");
-        return new HelloWorldBean(String.format("Hello World, %s", name));
+        return new HelloWorldBean(String.format("Hello, %s", name));
     }
 }
