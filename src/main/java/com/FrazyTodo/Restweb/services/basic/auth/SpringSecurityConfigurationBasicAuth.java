@@ -25,7 +25,7 @@ public class SpringSecurityConfigurationBasicAuth extends WebSecurityConfigurerA
                 .authenticated()
                 .and()
                 .httpBasic();
-        
+
 
     }
 
