@@ -25,19 +25,7 @@ public class SpringSecurityConfigurationBasicAuth extends WebSecurityConfigurerA
                 .authenticated()
                 .and()
                 .httpBasic();
-
-//        http
-//                .authorizeRequests()
-//                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-//                .antMatchers("/login").permitAll()
-//                .anyRequest().fullyAuthenticated()
-//                .and()
-//                .httpBasic()
-//                .and()
-//                .sessionManagement()
-//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//                .and()
-//                .csrf().disable();
+        
 
     }
 
