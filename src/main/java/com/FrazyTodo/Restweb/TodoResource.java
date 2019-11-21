@@ -8,9 +8,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
-
-@RestController
 @CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "*", allowedHeaders = "*")
+@RestController
 public class TodoResource {
 
     @Autowired
@@ -22,7 +22,7 @@ public class TodoResource {
     return todoService.findAll();
     }
 
-    @GetMapping("/users/{username}/todos/{id}")
+   @GetMapping("/users/{username}/todos/{id}")
     public Todo getTodo(@PathVariable String username, @PathVariable long id){
 
         return todoService.findById(id);
@@ -35,6 +35,7 @@ public class TodoResource {
     }
 
 //URI
+
     @PostMapping("/users/{username}/todos")
     public ResponseEntity<Void> updateTodo(@PathVariable String username, @RequestBody Todo todo){
         Todo createdTodo = todoService.save(todo);
